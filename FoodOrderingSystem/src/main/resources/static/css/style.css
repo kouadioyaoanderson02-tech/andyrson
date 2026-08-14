@@ -1,0 +1,142 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --primary: #ff6b35;
+    --primary-dark: #e55a25;
+    --dark: #1a1a2e;
+    --gray: #6c757d;
+    --light: #f8f9fa;
+    --white: #ffffff;
+    --shadow: 0 2px 15px rgba(0,0,0,0.1);
+    --radius: 12px;
+}
+
+body { font-family: 'Segoe UI', sans-serif; background: var(--light); color: var(--dark); }
+
+/* Navbar */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 2rem; background: var(--white); box-shadow: var(--shadow);
+    position: sticky; top: 0; z-index: 100;
+}
+.nav-brand { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--primary); }
+
+/* Buttons */
+.btn-primary {
+    background: var(--primary); color: var(--white); border: none;
+    padding: .6rem 1.4rem; border-radius: 25px; cursor: pointer;
+    font-weight: 600; text-decoration: none; transition: background .2s;
+    display: inline-block;
+}
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-sm { padding: .4rem .9rem; font-size: .85rem; }
+.btn-full { width: 100%; text-align: center; padding: .8rem; }
+
+/* Hero */
+.hero {
+    text-align: center; padding: 5rem 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, #ff9a56 100%);
+    color: var(--white);
+}
+.hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: .9; }
+
+/* Search */
+.search-form { display: flex; gap: .5rem; justify-content: center; max-width: 500px; margin: 0 auto; }
+.search-form input {
+    flex: 1; padding: .7rem 1.2rem; border: none; border-radius: 25px;
+    font-size: 1rem; outline: none;
+}
+
+/* Features */
+.features { display: flex; justify-content: center; gap: 2rem; padding: 3rem 2rem; flex-wrap: wrap; }
+.feature-card {
+    text-align: center; padding: 2rem; background: var(--white);
+    border-radius: var(--radius); box-shadow: var(--shadow); min-width: 180px;
+}
+.feature-card h3 { margin-top: .5rem; }
+
+/* Container */
+.container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+.container h2 { margin-bottom: 1.5rem; font-size: 1.8rem; }
+
+/* Restaurant Grid */
+.restaurant-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+.restaurant-card {
+    background: var(--white); border-radius: var(--radius);
+    box-shadow: var(--shadow); overflow: hidden; transition: transform .2s;
+}
+.restaurant-card:hover { transform: translateY(-4px); }
+.restaurant-img { width: 100%; height: 180px; object-fit: cover; }
+.card-body { padding: 1.2rem; }
+.card-body h3 { margin-bottom: .4rem; }
+.card-body p { color: var(--gray); font-size: .9rem; margin-bottom: .5rem; }
+.address { font-size: .85rem; color: var(--gray); margin-bottom: 1rem; }
+
+/* Menu Grid */
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+.menu-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.food-img { width: 100%; height: 160px; object-fit: cover; }
+.category { background: #fff3e0; color: var(--primary); padding: .2rem .6rem; border-radius: 10px; font-size: .8rem; }
+.price-row { display: flex; justify-content: space-between; align-items: center; margin-top: .8rem; }
+
+/* Cart */
+.cart-panel {
+    position: fixed; right: 1.5rem; bottom: 1.5rem;
+    background: var(--white); border-radius: var(--radius); box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+    padding: 1.5rem; width: 300px; max-height: 450px; overflow-y: auto;
+}
+.cart-panel h3 { margin-bottom: 1rem; }
+.cart-total { margin: 1rem 0; font-size: 1.1rem; }
+.cart-item { display: flex; justify-content: space-between; padding: .4rem 0; border-bottom: 1px solid #eee; font-size: .9rem; }
+
+/* Auth */
+.auth-page { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: var(--light); }
+.auth-card {
+    background: var(--white); padding: 2.5rem; border-radius: var(--radius);
+    box-shadow: var(--shadow); width: 100%; max-width: 420px;
+}
+.auth-card h2 { text-align: center; margin-bottom: 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: .4rem; font-weight: 500; }
+.form-group input {
+    width: 100%; padding: .7rem 1rem; border: 1px solid #ddd;
+    border-radius: 8px; font-size: 1rem; outline: none; transition: border .2s;
+}
+.form-group input:focus { border-color: var(--primary); }
+.auth-link { text-align: center; margin-top: 1rem; color: var(--gray); }
+.auth-link a { color: var(--primary); text-decoration: none; font-weight: 600; }
+
+/* Alerts */
+.alert { padding: .8rem 1rem; border-radius: 8px; margin-bottom: 1rem; }
+.alert-error { background: #ffeaea; color: #c0392b; }
+.alert-success { background: #eafaf1; color: #27ae60; }
+
+/* Orders */
+.order-card {
+    background: var(--white); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 1.5rem; margin-bottom: 1rem;
+}
+.order-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .8rem; font-weight: 600; }
+.order-restaurant { color: var(--primary); font-weight: 600; margin-bottom: .5rem; }
+.order-items { color: var(--gray); font-size: .9rem; margin-bottom: .8rem; }
+.order-items div { display: flex; justify-content: space-between; padding: .2rem 0; }
+.order-total { font-size: 1.1rem; text-align: right; }
+
+/* Status badges */
+.status { padding: .3rem .8rem; border-radius: 20px; font-size: .8rem; font-weight: 600; }
+.status-pending { background: #fff3cd; color: #856404; }
+.status-confirmed { background: #cfe2ff; color: #084298; }
+.status-preparing { background: #fff3e0; color: #e65100; }
+.status-out_for_delivery { background: #d1ecf1; color: #0c5460; }
+.status-delivered { background: #d4edda; color: #155724; }
+.status-cancelled { background: #f8d7da; color: #721c24; }
+
+.empty-msg { text-align: center; color: var(--gray); padding: 3rem; font-size: 1.1rem; }
+.empty-msg a { color: var(--primary); }
+.restaurant-header { margin-bottom: 2rem; }
+.restaurant-header h2 { font-size: 2rem; }
+.restaurant-header p { color: var(--gray); }

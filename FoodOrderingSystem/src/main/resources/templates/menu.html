@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${restaurant.name} + ' - Menu'">Menu</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<nav class="navbar">
+    <a class="nav-brand" th:href="@{/}">🍔 FoodApp</a>
+    <div class="nav-links">
+        <a th:href="@{/restaurants}">← Retour</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="restaurant-header">
+        <h2 th:text="${restaurant.name}">Restaurant</h2>
+        <p th:text="${restaurant.description}">Description</p>
+    </div>
+
+    <div class="menu-grid">
+        <div class="menu-card" th:each="item : ${menuItems}">
+            <img th:src="${item.imageUrl != null ? item.imageUrl : '/images/default-food.png'}"
+                 alt="food" class="food-img">
+            <div class="card-body">
+                <h4 th:text="${item.name}">Plat</h4>
+                <p th:text="${item.description}">Description</p>
+                <span class="category" th:text="${item.category}"></span>
+                <div class="price-row">
+                    <strong th:text="${#numbers.formatDecimal(item.price, 1, 2)} + ' €'">0.00 €</strong>
+                    <button class="btn-primary btn-sm add-to-cart"
+                            th:data-id="${item.id}"
+                            th:data-name="${item.name}"
+                            th:data-price="${item.price}">+ Ajouter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart -->
+    <div class="cart-panel" id="cartPanel">
+        <h3>🛒 Mon panier</h3>
+        <div id="cartItems"></div>
+        <div class="cart-total">Total: <strong id="cartTotal">0.00 €</strong></div>
+        <button class="btn-primary" id="checkoutBtn">Commander</button>
+    </div>
+</div>
+
+<script th:src="@{/js/cart.js}"></script>
+</body>
+</html>

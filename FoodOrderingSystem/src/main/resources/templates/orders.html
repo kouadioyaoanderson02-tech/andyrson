@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mes commandes - FoodApp</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<nav class="navbar">
+    <a class="nav-brand" th:href="@{/}">🍔 FoodApp</a>
+    <div class="nav-links">
+        <a th:href="@{/restaurants}">Restaurants</a>
+        <a th:href="@{/logout}">Déconnexion</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h2>Mes commandes</h2>
+    <div th:if="${#lists.isEmpty(orders)}" class="empty-msg">
+        Aucune commande pour l'instant. <a th:href="@{/restaurants}">Commander maintenant</a>
+    </div>
+
+    <div class="order-card" th:each="order : ${orders}">
+        <div class="order-header">
+            <span>Commande #<span th:text="${order.id}"></span></span>
+            <span class="status" th:classappend="${'status-' + order.status.name().toLowerCase()}"
+                  th:text="${order.status}"></span>
+            <span th:text="${#temporals.format(order.createdAt, 'dd/MM/yyyy HH:mm')}"></span>
+        </div>
+        <div class="order-restaurant" th:text="${order.restaurant.name}"></div>
+        <div class="order-items">
+            <div th:each="item : ${order.items}">
+                <span th:text="${item.quantity} + 'x ' + ${item.menuItem.name}"></span>
+                <span th:text="${#numbers.formatDecimal(item.unitPrice.multiply(new java.math.BigDecimal(item.quantity)), 1, 2)} + ' €'"></span>
+            </div>
+        </div>
+        <div class="order-total">Total: <strong th:text="${#numbers.formatDecimal(order.totalAmount, 1, 2)} + ' €'"></strong></div>
+    </div>
+</div>
+</body>
+</html>

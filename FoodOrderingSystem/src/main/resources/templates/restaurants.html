@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurants - FoodApp</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<nav class="navbar">
+    <a class="nav-brand" th:href="@{/}">🍔 FoodApp</a>
+    <div class="nav-links">
+        <a th:href="@{/login}">Connexion</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h2>Nos Restaurants</h2>
+    <form th:action="@{/restaurants}" method="get" class="search-form">
+        <input type="text" name="search" th:value="${search}" placeholder="Rechercher...">
+        <button type="submit" class="btn-primary">Rechercher</button>
+    </form>
+
+    <div class="restaurant-grid">
+        <div class="restaurant-card" th:each="r : ${restaurants}">
+            <img th:src="${r.imageUrl != null ? r.imageUrl : '/images/default-restaurant.png'}"
+                 alt="restaurant" class="restaurant-img">
+            <div class="card-body">
+                <h3 th:text="${r.name}">Nom</h3>
+                <p th:text="${r.description}">Description</p>
+                <p class="address">📍 <span th:text="${r.address}"></span></p>
+                <a th:href="@{/restaurants/{id}(id=${r.id})}" class="btn-primary">Voir le menu</a>
+            </div>
+        </div>
+    </div>
+    <p th:if="${#lists.isEmpty(restaurants)}" class="empty-msg">Aucun restaurant trouvé.</p>
+</div>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>

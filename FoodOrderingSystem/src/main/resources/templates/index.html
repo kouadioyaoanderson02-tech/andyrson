@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodApp - Commander en ligne</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-brand">🍔 FoodApp</div>
+    <div class="nav-links">
+        <a th:href="@{/restaurants}">Restaurants</a>
+        <span sec:authorize="isAuthenticated()">
+            <a th:href="@{/orders/my}">Mes commandes</a>
+            <a th:href="@{/logout}">Déconnexion</a>
+        </span>
+        <span sec:authorize="isAnonymous()">
+            <a th:href="@{/login}">Connexion</a>
+            <a th:href="@{/register}" class="btn-primary">S'inscrire</a>
+        </span>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Commandez vos plats préférés</h1>
+    <p>Livraison rapide depuis les meilleurs restaurants</p>
+    <form th:action="@{/restaurants}" method="get" class="search-form">
+        <input type="text" name="search" placeholder="Rechercher un restaurant...">
+        <button type="submit" class="btn-primary">Rechercher</button>
+    </form>
+</section>
+
+<section class="features">
+    <div class="feature-card">🚀 <h3>Livraison rapide</h3></div>
+    <div class="feature-card">🍽️ <h3>Large choix</h3></div>
+    <div class="feature-card">💳 <h3>Paiement sécurisé</h3></div>
+</section>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>
