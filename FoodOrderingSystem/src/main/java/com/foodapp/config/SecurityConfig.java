@@ -17,10 +17,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-@Configuration
-@EnableWebSecurity
-@EnableMethodSecurity
-@RequiredArgsConstructor
+@Configuration //Indique à Spring que cette classe contient de la configuration.
+@EnableWebSecurity//Active le système de sécurité de Spring.
+Sans cette annotation, Spring Security ne protège pas ton application.
+@EnableMethodSecurity//Elle permet d'utiliser des annotations comme :
+@RequiredArgsConstructor//
 public class SecurityConfig {
 
     private final JwtAuthFilter jwtAuthFilter;

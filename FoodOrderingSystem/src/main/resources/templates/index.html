@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodApp - Commander en ligne</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
 </head>
 <body>
+
+<!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-brand">🍔 FoodApp</div>
     <div class="nav-links">
@@ -23,20 +26,147 @@
     </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-    <h1>Commandez vos plats préférés</h1>
-    <p>Livraison rapide depuis les meilleurs restaurants</p>
-    <form th:action="@{/restaurants}" method="get" class="search-form">
-        <input type="text" name="search" placeholder="Rechercher un restaurant...">
-        <button type="submit" class="btn-primary">Rechercher</button>
-    </form>
+    <div class="hero-content">
+        <h1>Commandez vos plats<br><span class="highlight">préférés</span> en ligne</h1>
+        <p>Livraison rapide depuis les meilleurs restaurants près de chez vous</p>
+        <form th:action="@{/restaurants}" method="get" class="search-form">
+            <input type="text" name="search" placeholder="🔍 Rechercher un restaurant ou un plat...">
+            <button type="submit" class="btn-primary">Rechercher</button>
+        </form>
+        <div class="hero-badges">
+            <span>✅ Livraison en 30 min</span>
+            <span>✅ Paiement sécurisé</span>
+            <span>✅ Suivi en temps réel</span>
+        </div>
+    </div>
+    <div class="hero-image">🍕🍔🍜🌮🍣</div>
 </section>
 
-<section class="features">
-    <div class="feature-card">🚀 <h3>Livraison rapide</h3></div>
-    <div class="feature-card">🍽️ <h3>Large choix</h3></div>
-    <div class="feature-card">💳 <h3>Paiement sécurisé</h3></div>
+<!-- STATS -->
+<section class="stats">
+    <div class="stat-item"><strong>500+</strong><span>Restaurants</span></div>
+    <div class="stat-item"><strong>10k+</strong><span>Clients satisfaits</span></div>
+    <div class="stat-item"><strong>30 min</strong><span>Livraison moyenne</span></div>
+    <div class="stat-item"><strong>24/7</strong><span>Disponible</span></div>
 </section>
+
+<!-- CATEGORIES -->
+<section class="categories-section">
+    <div class="container">
+        <h2 class="section-title">Nos catégories</h2>
+        <div class="categories">
+            <a th:href="@{/restaurants(search='pizza')}" class="category-item">
+                <span class="cat-icon">🍕</span><span>Pizza</span>
+            </a>
+            <a th:href="@{/restaurants(search='burger')}" class="category-item">
+                <span class="cat-icon">🍔</span><span>Burger</span>
+            </a>
+            <a th:href="@{/restaurants(search='sushi')}" class="category-item">
+                <span class="cat-icon">🍣</span><span>Sushi</span>
+            </a>
+            <a th:href="@{/restaurants(search='tacos')}" class="category-item">
+                <span class="cat-icon">🌮</span><span>Tacos</span>
+            </a>
+            <a th:href="@{/restaurants(search='pasta')}" class="category-item">
+                <span class="cat-icon">🍝</span><span>Pasta</span>
+            </a>
+            <a th:href="@{/restaurants(search='salade')}" class="category-item">
+                <span class="cat-icon">🥗</span><span>Salade</span>
+            </a>
+            <a th:href="@{/restaurants(search='dessert')}" class="category-item">
+                <span class="cat-icon">🍰</span><span>Dessert</span>
+            </a>
+            <a th:href="@{/restaurants}" class="category-item">
+                <span class="cat-icon">🍽️</span><span>Tout voir</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- COMMENT CA MARCHE -->
+<section class="how-it-works">
+    <div class="container">
+        <h2 class="section-title">Comment ça marche ?</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-icon">📍</div>
+                <h3>Choisissez</h3>
+                <p>Parcourez nos restaurants et sélectionnez vos plats préférés</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-icon">🛒</div>
+                <h3>Commandez</h3>
+                <p>Ajoutez au panier et passez votre commande en quelques clics</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-icon">🚀</div>
+                <h3>Recevez</h3>
+                <p>Votre repas est livré chaud directement à votre porte</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AVANTAGES -->
+<section class="features-section">
+    <div class="container">
+        <h2 class="section-title">Pourquoi nous choisir ?</h2>
+        <div class="features-grid">
+            <div class="feature-card-home">
+                <div class="feature-icon">⚡</div>
+                <h3>Livraison express</h3>
+                <p>Recevez votre commande en moins de 30 minutes</p>
+            </div>
+            <div class="feature-card-home">
+                <div class="feature-icon">🔒</div>
+                <h3>Paiement sécurisé</h3>
+                <p>Vos données bancaires sont protégées à 100%</p>
+            </div>
+            <div class="feature-card-home">
+                <div class="feature-icon">📱</div>
+                <h3>Suivi en direct</h3>
+                <p>Suivez votre commande en temps réel</p>
+            </div>
+            <div class="feature-card-home">
+                <div class="feature-icon">⭐</div>
+                <h3>Qualité garantie</h3>
+                <p>Restaurants sélectionnés et notés par nos clients</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="cta-content">
+        <h2>Prêt à commander ?</h2>
+        <p>Rejoignez des milliers de clients satisfaits</p>
+        <div class="cta-buttons">
+            <a th:href="@{/restaurants}" class="btn-primary btn-lg">Voir les restaurants</a>
+            <a th:href="@{/register}" class="btn-outline btn-lg" sec:authorize="isAnonymous()">Créer un compte</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-brand">🍔 FoodApp</div>
+        <div class="footer-links">
+            <a th:href="@{/restaurants}">Restaurants</a>
+            <a th:href="@{/login}">Connexion</a>
+            <a th:href="@{/register}">S'inscrire</a>
+        </div>
+        <p class="footer-copy">© 2024 FoodApp. Tous droits réservés.</p>
+    </div>
+</footer>
 
 <script th:src="@{/js/app.js}"></script>
 </body>
