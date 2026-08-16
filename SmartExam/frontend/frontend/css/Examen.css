@@ -1,0 +1,169 @@
+body{
+
+    background:#f5f7fb;
+
+    font-family:'Segoe UI',sans-serif;
+
+}
+
+
+
+/* NAVBAR */
+
+.navbar{
+
+    background:linear-gradient(
+        135deg,
+        #0d6efd,
+        #6610f2
+    );
+
+}
+
+
+.navbar-brand{
+
+    font-size:26px;
+
+    font-weight:bold;
+
+}
+
+
+
+.nav-link{
+
+    color:white!important;
+
+    margin-left:15px;
+
+    font-weight:500;
+
+}
+
+
+.nav-link:hover{
+
+    color:#ffd43b!important;
+
+}
+
+
+
+/* TITRE */
+
+
+.page-title{
+
+    margin-top:40px;
+
+}
+
+
+.page-title h1{
+
+    color:#0d6efd;
+
+    font-weight:700;
+
+}
+
+
+.page-title p{
+
+    color:#777;
+
+    font-size:18px;
+
+}
+
+
+
+
+/* CARTES */
+
+
+.exam-card{
+
+    border:none;
+
+    border-radius:20px;
+
+    transition:0.3s;
+
+}
+
+
+
+.exam-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,0.15)!important;
+
+}
+
+
+
+
+
+.card-body{
+
+    padding:35px;
+
+}
+
+
+
+
+
+.icon{
+
+    font-size:90px;
+
+}
+
+
+
+
+
+.exam-card h3{
+
+    margin-top:20px;
+
+    font-weight:700;
+
+}
+
+
+
+
+/* BOUTONS */
+
+
+.btn-custom{
+
+    border-radius:30px;
+
+    padding:12px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:768px){
+
+
+.nav-link{
+
+    margin-left:0;
+
+}
+
+
+}

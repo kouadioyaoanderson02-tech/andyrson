@@ -1,0 +1,101 @@
+body{
+
+    background:#f5f7fb;
+
+    font-family:'Segoe UI',sans-serif;
+
+}
+
+/* Navbar */
+
+.navbar{
+
+    background:linear-gradient(135deg,#0d6efd,#6610f2);
+
+}
+
+.navbar-brand{
+
+    font-size:26px;
+
+    font-weight:bold;
+
+}
+
+.nav-link{
+
+    color:#fff!important;
+
+    margin-left:15px;
+
+    font-weight:500;
+
+}
+
+.nav-link:hover{
+
+    color:#ffd43b!important;
+
+}
+
+/* Carte de bienvenue */
+
+.welcome-card{
+
+    background:linear-gradient(135deg,#0d6efd,#6610f2);
+
+    color:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+}
+
+/* Cartes */
+
+.dashboard-card{
+
+    border:none;
+
+    border-radius:20px;
+
+    transition:.3s;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.dashboard-card h1{
+
+    font-size:55px;
+
+}
+
+/* Boutons */
+
+.btn{
+
+    border-radius:30px;
+
+    padding:10px 20px;
+
+    font-weight:bold;
+
+}
+
+/* Progression */
+
+.progress{
+
+    height:25px;
+
+    border-radius:30px;
+
+}
