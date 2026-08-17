@@ -1,0 +1,122 @@
+/* Résultats Page Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.resultat-card {
+    animation: fadeIn 0.6s ease forwards;
+    position: relative;
+}
+
+.stat-card {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-header p {
+        font-size: 0.95rem;
+    }
+    
+    .resultat-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .score-badge {
+        align-self: flex-start;
+    }
+    
+    .stats-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .stat-value {
+        font-size: 1.8rem;
+    }
+    
+    .resultat-details {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .detail-item {
+        padding: 10px;
+    }
+}
+
+/* Focus States for Accessibility */
+button:focus,
+a:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Smooth transitions */
+.resultat-card,
+.stat-card {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.resultat-card:hover,
+.stat-card:hover {
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+}
+
+/* Progress indicator colors */
+.score-badge {
+    transition: all 0.3s ease;
+}
+
+.score-badge:hover {
+    transform: scale(1.05);
+}
+
+/* Details styling */
+.resultat-details {
+    border-top: 1px solid #e9ecf1;
+}
+
+/* Button styling */
+.btn {
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}

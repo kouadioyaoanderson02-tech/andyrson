@@ -1,0 +1,647 @@
+/*
+====================================
+REINITIALISATION DU NAVIGATEUR
+====================================
+Cette partie remet les valeurs par défaut
+du navigateur à zéro.
+*/
+
+*{
+
+    /* Supprime les marges extérieures par défaut */
+    margin:0;
+
+
+    /* Supprime les espaces intérieurs par défaut */
+    padding:0;
+
+
+    /* Permet de gérer correctement les dimensions */
+    box-sizing:border-box;
+
+
+    /* Définit la police générale du site */
+    font-family:'Segoe UI', sans-serif;
+
+}
+
+
+
+
+
+/*
+====================================
+STYLE DE LA PAGE (BODY)
+====================================
+Le body représente toute la partie visible
+de la page dans le navigateur.
+*/
+
+
+body{
+
+
+    /*
+    Définit une hauteur minimale égale
+    à toute la hauteur de l'écran.
+
+    100vh = 100% de la hauteur visible
+    */
+    min-height:100vh;
+
+
+
+
+
+    /*
+    Active le système Flexbox.
+
+    Flexbox permet d'aligner facilement
+    les éléments dans une page.
+    */
+    display:flex;
+
+
+
+
+
+    /*
+    Centre horizontalement le contenu.
+
+    Exemple :
+
+    gauche                 droite
+
+              [LOGIN]
+
+    */
+    justify-content:center;
+
+
+
+
+
+    /*
+    Centre verticalement le contenu.
+
+    Exemple :
+
+    haut
+
+
+             [LOGIN]
+
+
+    bas
+
+    */
+    align-items:center;
+
+
+
+
+
+    /*
+    Ajoute un espace intérieur autour
+    du contenu du body.
+
+    Cela évite que la carte colle
+    aux bords sur les petits écrans.
+    */
+    padding:20px;
+
+
+
+
+
+    /*
+    Création d'un dégradé de couleur.
+
+    La première couleur est le bleu.
+    La deuxième couleur est le violet.
+    */
+    background:linear-gradient(
+
+        135deg,
+
+        #0d6efd,
+
+        #6610f2
+
+    );
+
+
+
+
+
+    /*
+    Empêche l'apparition d'une barre
+    de défilement horizontale inutile.
+    */
+    overflow-x:hidden;
+
+
+}
+
+
+
+
+
+
+
+/*
+====================================
+CARTE PRINCIPALE DE CONNEXION
+====================================
+Cette classe représente la boîte blanche
+qui contient :
+
+- le logo
+- le titre SmartEXAM
+- le formulaire
+*/
+
+
+.login-container{
+
+
+    /*
+    Définit la largeur de la carte.
+
+    Ici la carte aura une largeur
+    de 400 pixels.
+    */
+    width:400px;
+
+
+
+
+
+    /*
+    Définit la couleur de fond
+    de la carte.
+
+    Ici elle sera blanche.
+    */
+    background:white;
+
+
+
+
+
+    /*
+    Ajoute un espace intérieur.
+
+    Le contenu ne sera pas collé
+    aux bords de la carte.
+    */
+    padding:40px;
+
+
+
+
+
+    /*
+    Arrondit les coins de la carte.
+
+    Plus la valeur est grande,
+    plus les coins seront arrondis.
+    */
+    border-radius:20px;
+
+
+
+
+
+    /*
+    Ajoute une ombre autour
+    de la carte.
+
+    0      = déplacement horizontal
+    15px   = déplacement vertical
+    40px   = niveau de flou
+    rgba   = couleur noire transparente
+    */
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+
+
+
+
+
+    /*
+    Ajoute une animation douce
+    lors des changements d'état.
+    */
+    transition:0.3s;
+
+
+}
+
+.input-group{
+
+
+    /*
+    Ajoute un espace entre
+    chaque champ.
+
+    Exemple :
+
+    Email
+
+    Mot de passe
+
+    */
+    margin-bottom:20px;
+
+
+}
+
+
+.input-group label{
+
+
+    /*
+    Transforme le label en bloc.
+
+    Il prend toute la largeur.
+    */
+    display:block;
+
+
+
+
+
+    /*
+    Ajoute un espace entre
+    le texte et la zone de saisie.
+    */
+    margin-bottom:8px;
+
+
+
+
+
+    /*
+    Rend le texte plus visible.
+    */
+    font-weight:600;
+
+
+
+
+
+    /*
+    Couleur du texte.
+    */
+    color:#333;
+
+
+}
+
+.input-group input{
+
+
+    /*
+    L'input prend toute la largeur
+    disponible de la carte.
+    */
+    width:100%;
+
+
+
+
+
+    /*
+    Ajoute de l'espace à l'intérieur
+    de la zone.
+
+    Le texte ne sera pas collé.
+    */
+    padding:14px;
+
+
+
+
+
+    /*
+    Ajoute une bordure légère.
+    */
+    border:1px solid #ddd;
+
+
+
+
+
+    /*
+    Arrondit les coins
+    des champs.
+    */
+    border-radius:10px;
+
+
+
+
+
+    /*
+    Supprime le contour bleu
+    automatique du navigateur.
+    */
+    outline:none;
+
+
+
+
+
+    /*
+    Taille du texte écrit.
+    */
+    font-size:15px;
+
+
+}
+
+input-group input:focus{
+
+
+    /*
+    Change la couleur
+    de la bordure au clic.
+    */
+    border-color:#0d6efd;
+
+
+
+
+
+    /*
+    Ajoute une petite lumière
+    autour du champ.
+    */
+    box-shadow:0 0 5px rgba(13,110,253,0.3);
+
+
+}
+
+
+
+
+.options{
+
+
+    /*
+    Permet de placer les éléments
+    correctement sur la ligne.
+    */
+    display:flex;
+    /*
+    Ajoute un espace sous cette partie
+    avant le lien suivant.
+    */
+    margin-bottom:15px;
+
+
+
+
+}
+.options label{
+
+
+    /*
+    Définit la taille du texte.
+    */
+    font-size:14px;
+
+
+
+
+    /*
+    Change la couleur du texte.
+    */
+    color:#555;
+
+
+}
+.options input{
+
+
+    /*
+    Ajoute un petit espace entre
+    la case et le texte.
+    */
+    margin-right:8px;
+
+
+}
+
+a{
+
+
+    /*
+    Supprime le soulignement
+    automatique des liens.
+    */
+    text-decoration:none;
+    /*
+    Donne une couleur bleue.
+    */
+    color:#0d6efd;
+
+    /*
+    Rend le texte légèrement plus visible.
+    */
+    font-weight:500;
+
+
+}
+a:hover{
+
+
+    /*
+    Réaffiche le soulignement.
+    */
+    text-decoration:underline;
+
+
+}
+/*
+====================================
+RESPONSIVE DESIGN
+====================================
+Cette partie adapte le formulaire
+aux petits écrans (tablettes et téléphones).
+*/
+
+@media screen and (max-width:768px){
+
+
+    /*
+    Réduit la largeur de la carte.
+    */
+    .login-container{
+
+        width:90%;
+
+        padding:30px;
+
+    }
+
+
+
+    /*
+    Réduit la taille du titre.
+    */
+    .login-header h1{
+
+        font-size:28px;
+
+    }
+
+
+
+    /*
+    Réduit la taille du logo.
+    */
+    .logo{
+
+        width:60px;
+
+        height:60px;
+
+        font-size:30px;
+
+    }
+
+
+
+    /*
+    Réduit légèrement la taille
+    des champs.
+    */
+    .input-group input{
+
+        padding:12px;
+
+    }
+
+
+
+    /*
+    Réduit légèrement le bouton.
+    */
+    button{
+
+        padding:12px;
+
+    }
+
+}
+
+
+
+
+
+/*
+====================================
+PETITS TELEPHONES
+====================================
+Pour les écrans inférieurs à 480px.
+*/
+
+@media screen and (max-width:480px){
+
+
+    /*
+    La carte occupe presque toute
+    la largeur de l'écran.
+    */
+    .login-container{
+
+        width:95%;
+
+        padding:20px;
+
+    }
+
+
+
+    /*
+    Réduit encore le titre.
+    */
+    .login-header h1{
+
+        font-size:24px;
+
+    }
+
+
+
+    /*
+    Réduit le texte de description.
+    */
+    .login-header p{
+
+        font-size:14px;
+
+    }
+
+
+
+    /*
+    Réduit la taille des champs.
+    */
+    .input-group input{
+
+        font-size:14px;
+
+    }
+
+
+
+    /*
+    Réduit la taille du bouton.
+    */
+    button{
+
+        font-size:15px;
+
+    }
+
+
+
+    /*
+    Centre le texte d'inscription.
+    */
+    .register{
+
+        text-align:center;
+
+        font-size:14px;
+
+    }
+
+}
+.btn-login{
+
+    display:block;
+
+    width:100%;
+
+    padding:14px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#0d6efd;
+
+    border-radius:30px;
+
+}
+
+
+
+
+
+

@@ -1,0 +1,113 @@
+/* Quiz Page Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 900px;
+}
+
+.quiz-container {
+    position: relative;
+}
+
+.question-card {
+    animation: slideIn 0.3s ease;
+    scroll-behavior: smooth;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animations pour les options */
+.option label {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.option input[type="radio"]:checked + label {
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quiz-header {
+        padding: 20px !important;
+    }
+    
+    .quiz-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .quiz-body {
+        padding: 20px !important;
+    }
+    
+    .option label {
+        padding: 12px !important;
+        font-size: 0.95rem;
+    }
+    
+    .btn-submit {
+        padding: 12px 30px !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* Focus States for Accessibility */
+input[type="radio"]:focus + label {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Loader Animation */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Tooltip Styles */
+.tooltip-inner {
+    background-color: #667eea;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
